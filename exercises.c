@@ -60,7 +60,7 @@ retorne la suma de sus elementos.
 */
 int sumaLista(List *L) 
 {
-   int suma = 0;
+   int suma = 0; 
    int * dato = (int*) first(L);
    while(dato != NULL)
    {
@@ -136,37 +136,25 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 
 int parentesisBalanceados(char *cadena)
 {
-   int largo = 0;
+   Stack* aux = create_stack();
    for(int i = 0; cadena[i] != '\0'; i++)
    {
-      largo ++;
-   }
-   if (largo % 2 != 0) return 0;
-   for(int i = 0; i <= largo/2; i++)
-   {
-      int parent = 0;
-      int llave = 0;
-      int corchete = 0;
-      if(cadena[i] == ')') parent ++;
-      else if(cadena[i] == ']')   corchete ++;
-      else llave ++;
-      for(int k = largo - 1; k >= largo/2 ; k--)
+      char c = cadena[i];
+      if(c == '(' || c == '{' || c == '[')
       {
-         if(parent > 0) 
-         {
-            if(cadena[k] != ')') return 0;
-         }
-         else if(corchete > 0)
-         {
-            if(cadena[k] != ']') return 0;
-         }
-         else  
-         {
-            if(cadena[k] != '}') return 0;
-         } 
-      }
-   }
+         push(aux, (void*)(long)c)   // char --> long --> void* | caracter --> valor ascii --> puntero a void
+         // char c = numero pequeno , void* -> direccion de memoria , (void*)c --> (void*) 21 --> invalido , "21" como ejemplo.
+      }   
+      else if(c == ')' || c == '}' || c == ']')
+      {
+         if(top(aux) == NULL) return 0;
+         char topc = (char) (long) top(aux); 
+         pop(aux);
+         if(c == ')' && topc != '(' || c == '}' && topc != '{' || c == ']' && topc != '[') return 0;
+      }   
+      
+   }   
+   if(top(aux) != NULL) return 0;
    return 1;
-
 }
 
