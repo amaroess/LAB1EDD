@@ -68,3 +68,14 @@ Sun Mar 22 03:56:17 AM UTC 2026:
  tests:  3|2
 total_score: 40/70
 c3eb9f9
+Sun Mar 22 04:06:00 AM UTC 2026: 
+ exercises.c | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:120:18: error: ‘AUX’ undeclared (first use in this function)
+  120 |    while(dato != AUX)
+      |                  ^~~
+exercises.c:120:18: note: each undeclared identifier is reported only once for each function it appears in
+28bc7db
