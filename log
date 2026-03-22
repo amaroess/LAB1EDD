@@ -360,3 +360,17 @@ exercises.c:153:76: error: suggest parentheses around ‘&&’ within ‘||’ [
       |                                                                   ~~~~~~~~~^~~~~~~~~~~~~~
 cc1: all warnings being treated as errors
 f6b8cf6
+Sun Mar 22 07:35:58 PM UTC 2026: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:153:22: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  153 |          if(c == ')' && topc != '(' || c == '}' && topc != '{' || c == ']' && topc != '[') return 0;
+      |             ~~~~~~~~~^~~~~~~~~~~~~~
+exercises.c:153:76: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  153 |          if(c == ')' && topc != '(' || c == '}' && topc != '{' || c == ']' && topc != '[') return 0;
+      |                                                                   ~~~~~~~~~^~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+bb1cc3f

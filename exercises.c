@@ -142,7 +142,7 @@ int parentesisBalanceados(char *cadena)
       char c = cadena[i];
       if(c == '(' || c == '{' || c == '[')
       {
-         push(aux, (void*)(long) c )   // char --> long --> void* | caracter --> valor ascii --> puntero a void
+         push(aux, (void*)(long) c );   // char --> long --> void* | caracter --> valor ascii --> puntero a void
          // char c = numero pequeno , void* -> direccion de memoria , (void*)c --> (void*) 21 --> invalido , "21" como ejemplo.
       }   
       else if(c == ')' || c == '}' || c == ']')
