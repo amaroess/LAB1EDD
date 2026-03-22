@@ -150,7 +150,7 @@ int parentesisBalanceados(char *cadena)
          if(top(aux) == NULL) return 0;
          char topc = (char) (long) top(aux); 
          pop(aux);
-         if(c == ')' && topc != '(' || c == '}' && topc != '{' || c == ']' && topc != '[') return 0;
+         if( (c == ')' && topc != '(') || (c == '}' && topc != '{') || (c == ']' && topc != '[') ) return 0;
       }   
       
    }   
