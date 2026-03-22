@@ -147,22 +147,22 @@ int parentesisBalanceados(char *cadena)
       int parent = 0;
       int llave = 0;
       int corchete = 0;
-      if(cadena[i] == ")") return 0; parent ++;
-      else if(cadena[i] == "]")   corchete ++;
-      else(cadena[i] == "}") llave;
+      if(cadena[i] == ')') parent ++;
+      else if(cadena[i] == ']')   corchete ++;
+      else llave ++;
       for(int k = largo; k >= largo/2 ; k--)
       {
          if(parent > 0) 
          {
-            if(cadena[k] != ")") return 0;
+            if(cadena[k] != ')') return 0;
          }
          else if(corchete > 0)
          {
-            if(cadena[k] != "]") return 0;
+            if(cadena[k] != ']') return 0;
          }
-         else(llave > 0)   
+         else  
          {
-            if(cadena[k] != "}") return 0;
+            if(cadena[k] != '}') return 0;
          } 
       }
    }
