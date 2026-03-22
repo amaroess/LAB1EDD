@@ -341,3 +341,22 @@ exercises.c:153:76: error: suggest parentheses around ‘&&’ within ‘||’ [
       |                                                                   ~~~~~~~~~^~~~~~~~~~~~~~
 cc1: all warnings being treated as errors
 033344b
+Sun Mar 22 07:35:39 PM UTC 2026: 
+Compilation failed
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:145:37: error: expected ‘;’ before ‘}’ token
+  145 |          push(aux, (void*)(long) c )   // char --> long --> void* | caracter --> valor ascii --> puntero a void
+      |                                     ^
+      |                                     ;
+  146 |          // char c = numero pequeno , void* -> direccion de memoria , (void*)c --> (void*) 21 --> invalido , "21" como ejemplo.
+  147 |       }
+      |       ~                              
+exercises.c:153:22: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  153 |          if(c == ')' && topc != '(' || c == '}' && topc != '{' || c == ']' && topc != '[') return 0;
+      |             ~~~~~~~~~^~~~~~~~~~~~~~
+exercises.c:153:76: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  153 |          if(c == ')' && topc != '(' || c == '}' && topc != '{' || c == ']' && topc != '[') return 0;
+      |                                                                   ~~~~~~~~~^~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+f6b8cf6
