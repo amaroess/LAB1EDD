@@ -46,11 +46,11 @@ List* crea_lista()
    List* L = create_list(); // se crea lista
    for(int i = 1; i <= 10; i++) // for del 1 al 10
       {
-         int * num = malloc(sizeof(int)); // 
-         *num = i;
-         pushBack(L,num);
+         int * num = malloc(sizeof(int)); //  se reserva memoria por cada elemento
+         *num = i; // se le asigna valor
+         pushBack(L,num); // se inserta elemento al final de la lista
       }
-   return L;
+   return L; // retorna lista
 }
 
 /*
@@ -60,14 +60,14 @@ retorne la suma de sus elementos.
 */
 int sumaLista(List *L) 
 {
-   int suma = 0; 
-   int * dato = first(L);
-   while(dato != NULL)
+   int suma = 0; // variable para almacenar suma
+   int * dato = first(L); // variable que almacena primer elemento de la lista
+   while(dato != NULL) // mientras no sea el final de la lista
    {
-      suma += *dato;
-      dato = next(L);   
+      suma += *dato; // se suma el dato a la suma total
+      dato = next(L);   // se pasa al siguiente elemento
    }
-   return suma;
+   return suma; // retorna suma total
 }
 
 /*
@@ -81,21 +81,21 @@ posiciona en el elemento anterior.
 
 void eliminaElementos(List*L, int elem)
 {
-   int * dato = first(L);
-   while(dato != NULL)
+   int * dato = first(L); // variable se le asigna primer elemento de la lista
+   while(dato != NULL) // mientras no sea el final de la lista
    {
-      if (*dato == elem)
+      if (*dato == elem) // si dato es igual al elemento
       {
-         free(dato);
-         dato = popCurrent(L);
+         free(dato); // se libera memoria de dato para poder eliminar el nodo despues
+         dato = popCurrent(L); // se elimina el elemento encontrado y retorna el anterior
       }
-      else
+      else // si no es igual 
       {
-         dato = next(L);
+         dato = next(L); // se pasa al siguiente elemento
       } 
 
    }
-   return;
+   return; 
 }
 
 /*
@@ -107,22 +107,22 @@ Puedes usar una pila auxiliar.
 
 void copia_pila(Stack* P1, Stack* P2) 
 {
-   Stack* aux = create_stack();
-   void* dato;
-   dato = top(P1);
-   while(dato != NULL)
+   Stack* aux = create_stack(); // se crea el stack auxiliar
+   void* dato; // variable dato
+   dato = top(P1); // dato se le asigna primer elemento del stack
+   while(dato != NULL) // mientras stack tenga datos
    {
-      push(aux,dato);
-      pop(P1);
-      dato = top(P1);
+      push(aux,dato); // se inserta dato en stack auxiliar
+      pop(P1); // se elimina primer elemento de stack original
+      dato = top(P1); // dato se le asigna primer elemento nuevo del stack para avanzar
    }
-   dato = top(aux);
-   while(dato != NULL)
+   dato = top(aux); // dato se le asigna primer elemento del stack auxiliar.
+   while(dato != NULL) // copia final
    {
-      push(P1,dato);
-      push(P2,dato);
-      pop(aux);
-      dato = top(aux);
+      push(P1,dato); // restaurar stack original
+      push(P2,dato); // insertar en el nuevo
+      pop(aux); // se elimina el primer en aux
+      dato = top(aux); // se pasa al siguiente
    }
 
 }
