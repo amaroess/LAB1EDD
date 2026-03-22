@@ -147,9 +147,11 @@ int parentesisBalanceados(char *cadena)
       else if(c == ')' || c == '}' || c == ']')   //  si es cierre
       {
          if(top(aux) == NULL) return 0; // si no hay apertura, retorna falso.
-         char topc = (char)(long) top(aux); // void* --> long --> char . variable de comparacion
-         pop(aux);  // ya se guarda el top en topc, por lo que se elimina para comparar el siguiente en la proxima iteracion.
+         char topc = *(char*) top(aux); // void* --> long --> char . variable de comparacion
          if( (c == ')' && topc != '(') || (c == '}' && topc != '{') || (c == ']' && topc != '[') ) return 0; // si apertura no coincide con cierre retorna falso.
+         free(topc);
+         pop(aux);  // ya se guarda el top en topc, por lo que se elimina para comparar el siguiente en la proxima iteracion.
+         
       }   
    }   
    if(top(aux) != NULL) return 0; // si quedan elementos en la pila significa que falta un parentesis de cierre, por lo que retorna falso.

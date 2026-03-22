@@ -453,3 +453,19 @@ Sun Mar 22 09:43:05 PM UTC 2026:
  tests:  4|1
 total_score: 50/70
 4a8bfa9
+Sun Mar 22 09:45:27 PM UTC 2026: 
+ exercises.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:152:15: error: passing argument 1 of ‘free’ makes pointer from integer without a cast [-Wint-conversion]
+  152 |          free(topc);
+      |               ^~~~
+      |               |
+      |               char
+In file included from test.c:2:
+/nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/stdlib.h:687:25: note: expected ‘void *’ but argument is of type ‘char’
+  687 | extern void free (void *__ptr) __THROW;
+      |                   ~~~~~~^~~~~
+6c0dd99
