@@ -469,3 +469,14 @@ In file included from test.c:2:
   687 | extern void free (void *__ptr) __THROW;
       |                   ~~~~~~^~~~~
 6c0dd99
+Sun Mar 22 09:46:24 PM UTC 2026: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:152:15: error: ‘p’ undeclared (first use in this function)
+  152 |          free(p);
+      |               ^
+exercises.c:152:15: note: each undeclared identifier is reported only once for each function it appears in
+9d1a11a

@@ -149,7 +149,7 @@ int parentesisBalanceados(char *cadena)
          if(top(aux) == NULL) return 0; // si no hay apertura, retorna falso.
          char topc = *(char*) top(aux); // void* --> long --> char . variable de comparacion
          if( (c == ')' && topc != '(') || (c == '}' && topc != '{') || (c == ']' && topc != '[') ) return 0; // si apertura no coincide con cierre retorna falso.
-         free(topc);
+         free(p);
          pop(aux);  // ya se guarda el top en topc, por lo que se elimina para comparar el siguiente en la proxima iteracion.
          
       }   
