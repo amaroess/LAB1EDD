@@ -168,10 +168,5 @@ int parentesisBalanceados(char *cadena)
    }
    return 1;
 
-
-
-
-   
-   return 0;
 }
 
