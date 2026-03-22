@@ -136,25 +136,26 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 
 int parentesisBalanceados(char *cadena)
 {
-   Stack* aux = create_stack();
-   for(int i = 0; cadena[i] != '\0'; i++)
+   Stack* aux = create_stack();  // pila para guardar parentesis de apertura
+   for(int i = 0; cadena[i] != '\0'; i++) // por cada caracter hasta llegar al final de la cadena \0
    {
-      char c = cadena[i];
-      if(c == '(' || c == '{' || c == '[')
+      char c = cadena[i];  // variable para facilitar comparaciones y operaciones
+      if(c == '(' || c == '{' || c == '[') // si es apertura
       {
-         push(aux, (void*)(long) c );   // char --> long --> void* | caracter --> valor ascii --> puntero a void
+         push(aux, (void*)(long) c );   // se inserta en la pila. char --> long --> void* | caracter --> valor ascii --> puntero a void, funcion propuesta requiere void*;
          // char c = numero pequeno , void* -> direccion de memoria , (void*)c --> (void*) 21 --> invalido , "21" como ejemplo.
       }   
-      else if(c == ')' || c == '}' || c == ']')
+      else if(c == ')' || c == '}' || c == ']')   //  si es cierre
       {
-         if(top(aux) == NULL) return 0;
-         char topc = (char) (long) top(aux); 
-         pop(aux);
-         if( (c == ')' && topc != '(') || (c == '}' && topc != '{') || (c == ']' && topc != '[') ) return 0;
+         if(top(aux) == NULL) return 0; // si no hay apertura, retorna falso.
+         char topc = (char) (long) top(aux); // void* --> long --> char . variable de comparacion
+         pop(aux);  // ya se guarda el top en topc, por lo que se elimina para comparar el siguiente en la proxima iteracion.
+         if( (c == ')' && topc != '(') || (c == '}' && topc != '{') || (c == ']' && topc != '[') ) return 0; // si apertura no coincide con cierre retorna falso.
       }   
+
       
    }   
-   if(top(aux) != NULL) return 0;
-   return 1;
+   if(top(aux) != NULL) return 0; // si quedan elementos en la pila significa que falta un parentesis de cierre, por lo que retorna falso.
+   return 1; // retorna verdadero
 }
 
