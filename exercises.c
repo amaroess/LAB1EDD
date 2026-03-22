@@ -93,9 +93,7 @@ void eliminaElementos(List*L, int elem)
       {
          dato = next(L); // se pasa al siguiente elemento
       } 
-
    }
-   return; 
 }
 
 /*
@@ -124,7 +122,6 @@ void copia_pila(Stack* P1, Stack* P2)
       pop(aux); // se elimina el primer en aux
       dato = top(aux); // se pasa al siguiente
    }
-
 }
 
 /*
@@ -152,8 +149,6 @@ int parentesisBalanceados(char *cadena)
          pop(aux);  // ya se guarda el top en topc, por lo que se elimina para comparar el siguiente en la proxima iteracion.
          if( (c == ')' && topc != '(') || (c == '}' && topc != '{') || (c == ']' && topc != '[') ) return 0; // si apertura no coincide con cierre retorna falso.
       }   
-
-      
    }   
    if(top(aux) != NULL) return 0; // si quedan elementos en la pila significa que falta un parentesis de cierre, por lo que retorna falso.
    return 1; // retorna verdadero
