@@ -139,9 +139,9 @@ int parentesisBalanceados(char *cadena)
       char c = cadena[i];  // variable para facilitar comparaciones y operaciones
       if(c == '(' || c == '{' || c == '[') // si es apertura
       {
-         char* p = malloc(sizeof(char));
-         *p = c;
-         push(aux, p);  
+         char* p = malloc(sizeof(char)); // se reserva memoria para el puntero
+         *p = c; // se le asigna  parentesis al valor del puntero
+         push(aux, p);  // se almacena puntero con parentesis en pila auxiliar
       }   
       else if(c == ')' || c == '}' || c == ']')   //  si es cierre
       {
@@ -151,7 +151,6 @@ int parentesisBalanceados(char *cadena)
          if( (c == ')' && topc != '(') || (c == '}' && topc != '{') || (c == ']' && topc != '[') ) return 0; // si apertura no coincide con cierre retorna falso.
          free(p); // se libera memoria antes del pop
          pop(aux);  // ya se guarda el top en topc, por lo que se elimina para comparar el siguiente en la proxima iteracion.
-         
       }   
    }   
    if(top(aux) != NULL) return 0; // si quedan elementos en la pila significa que falta un parentesis de cierre, por lo que retorna falso.
