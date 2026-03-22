@@ -1,0 +1,11 @@
+Sun Mar 22 03:37:27 AM UTC 2026: 
+ exercises.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:51:10: error: implicit declaration of function ‘pushback’; did you mean ‘pushBack’? [-Wimplicit-function-declaration]
+   51 |          pushback(L,num);
+      |          ^~~~~~~~
+      |          pushBack
+39c274f
