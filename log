@@ -416,3 +416,17 @@ Sun Mar 22 09:10:43 PM UTC 2026:
  tests:  9|0
 total_score: 70/70
 c629ff8
+Sun Mar 22 09:34:07 PM UTC 2026: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:142:20: error: cast to pointer from integer of different size [-Werror=int-to-pointer-cast]
+  142 |          push(aux, (void*) c );   // se inserta en la pila. char --> long --> void* | caracter --> valor ascii --> puntero a void, funcion propuesta requiere void*;
+      |                    ^
+exercises.c:148:22: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  148 |          char topc = (char) top(aux); // void* --> long --> char . variable de comparacion
+      |                      ^
+cc1: all warnings being treated as errors
+1085806
