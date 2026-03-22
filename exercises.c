@@ -139,7 +139,9 @@ int parentesisBalanceados(char *cadena)
       char c = cadena[i];  // variable para facilitar comparaciones y operaciones
       if(c == '(' || c == '{' || c == '[') // si es apertura
       {
-         push(aux, (void*)(long) c );   // se inserta en la pila. char --> long --> void* | caracter --> valor ascii --> puntero a void, funcion propuesta requiere void*;
+         char* p = malloc(sizeof(char));
+         *p = c;
+         push(aux, p);   // se inserta en la pila. char --> long --> void* | caracter --> valor ascii --> puntero a void, funcion propuesta requiere void*;
          // char c = numero pequeno , void* -> direccion de memoria , (void*)c --> (void*) 21 --> invalido , "21" como ejemplo.
       }   
       else if(c == ')' || c == '}' || c == ']')   //  si es cierre
