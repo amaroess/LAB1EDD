@@ -251,3 +251,56 @@ exercises.c:163:25: error: expected ‘;’ before ‘{’ token
       |          ~               
 cc1: all warnings being treated as errors
 e50f9fe
+Sun Mar 22 04:45:28 AM UTC 2026: 
+ exercises.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+Compilation failed
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:150:20: error: comparison between pointer and integer [-Werror]
+  150 |       if(cadena[i] == ")") return 0; parent ++;
+      |                    ^~
+exercises.c:150:20: error: comparison with string literal results in unspecified behavior [-Werror=address]
+exercises.c:150:7: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  150 |       if(cadena[i] == ")") return 0; parent ++;
+      |       ^~
+exercises.c:150:38: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  150 |       if(cadena[i] == ")") return 0; parent ++;
+      |                                      ^~~~~~
+exercises.c:151:7: error: ‘else’ without a previous ‘if’
+  151 |       else if(cadena[i] == "]")   corchete ++;
+      |       ^~~~
+exercises.c:151:25: error: comparison between pointer and integer [-Werror]
+  151 |       else if(cadena[i] == "]")   corchete ++;
+      |                         ^~
+exercises.c:151:25: error: comparison with string literal results in unspecified behavior [-Werror=address]
+exercises.c:152:22: error: comparison between pointer and integer [-Werror]
+  152 |       else(cadena[i] == "}") llave;
+      |                      ^~
+exercises.c:152:22: error: comparison with string literal results in unspecified behavior [-Werror=address]
+exercises.c:152:22: error: statement with no effect [-Werror=unused-value]
+  152 |       else(cadena[i] == "}") llave;
+      |           ~~~~~~~~~~~^~~~~~~
+exercises.c:152:29: error: expected ‘;’ before ‘llave’
+  152 |       else(cadena[i] == "}") llave;
+      |                             ^~~~~~
+      |                             ;
+exercises.c:157:26: error: comparison between pointer and integer [-Werror]
+  157 |             if(cadena[k] != ")") return 0;
+      |                          ^~
+exercises.c:157:26: error: comparison with string literal results in unspecified behavior [-Werror=address]
+exercises.c:161:26: error: comparison between pointer and integer [-Werror]
+  161 |             if(cadena[k] != "]") return 0;
+      |                          ^~
+exercises.c:161:26: error: comparison with string literal results in unspecified behavior [-Werror=address]
+exercises.c:163:21: error: statement with no effect [-Werror=unused-value]
+  163 |          else(llave > 0)
+      |              ~~~~~~~^~~~
+exercises.c:163:25: error: expected ‘;’ before ‘{’ token
+  163 |          else(llave > 0)
+      |                         ^
+      |                         ;
+  164 |          {
+      |          ~               
+cc1: all warnings being treated as errors
+880345f
