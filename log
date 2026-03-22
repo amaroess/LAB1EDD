@@ -480,3 +480,9 @@ exercises.c:152:15: error: ‘p’ undeclared (first use in this function)
       |               ^
 exercises.c:152:15: note: each undeclared identifier is reported only once for each function it appears in
 9d1a11a
+Sun Mar 22 09:51:51 PM UTC 2026: 
+ exercises.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  9|0
+total_score: 70/70
+9a8993c

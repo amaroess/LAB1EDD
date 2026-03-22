@@ -141,13 +141,13 @@ int parentesisBalanceados(char *cadena)
       {
          char* p = malloc(sizeof(char));
          *p = c;
-         push(aux, p);   // se inserta en la pila. char --> long --> void* | caracter --> valor ascii --> puntero a void, funcion propuesta requiere void*;
-         // char c = numero pequeno , void* -> direccion de memoria , (void*)c --> (void*) 21 --> invalido , "21" como ejemplo.
+         push(aux, p);  
       }   
       else if(c == ')' || c == '}' || c == ']')   //  si es cierre
       {
          if(top(aux) == NULL) return 0; // si no hay apertura, retorna falso.
-         char topc = *(char*) top(aux); // void* --> long --> char . variable de comparacion
+         char* p = (char*) top(aux); 
+         char topc = *p;
          if( (c == ')' && topc != '(') || (c == '}' && topc != '{') || (c == ']' && topc != '[') ) return 0; // si apertura no coincide con cierre retorna falso.
          free(p);
          pop(aux);  // ya se guarda el top en topc, por lo que se elimina para comparar el siguiente en la proxima iteracion.
