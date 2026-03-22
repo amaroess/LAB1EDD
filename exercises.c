@@ -134,7 +134,44 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
 
-int parentesisBalanceados(char *cadena) {
+int parentesisBalanceados(char *cadena)
+{
+   int largo = 0;
+   for(int i = 0; cadena[i] != '\n'; i++)
+   {
+      largo ++;
+   }
+   if (largo % 2 != 0) return 0;
+   for(int i = 0; i <= largo/2; i++)
+   {
+      int parent = 0;
+      int llave = 0;
+      int corchete = 0;
+      if(strcmp(cadena[i],"(") == 0) parent ++;
+      else if(strcmp(cadena[i],"[") == 0)   corchete ++;
+      else(strcmp(cadena[i]),"{") == 0) llave;
+      for(int k = largo; k >= largo/2 ; k--)
+      {
+         if(parent > 0) 
+         {
+            if(strcmp(cadena[k],")") != 0) return 0;
+         }
+         else if(corchete > 0)
+         {
+            if(strcmp(cadena[k],"]") != 0) return 0;
+         }
+         else(llave > 0)   
+         {
+            if(strcmp(cadena[k],"}") != 0) return 0;
+         } 
+      }
+   }
+   return 1;
+
+
+
+
+   
    return 0;
 }
 

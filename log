@@ -167,3 +167,87 @@ Sun Mar 22 04:17:08 AM UTC 2026:
  tests:  4|1
 total_score: 50/70
 5bfb78e
+Sun Mar 22 04:42:20 AM UTC 2026: 
+ exercises.c | 39 ++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 38 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:150:23: error: passing argument 1 of ‘strcmp’ makes pointer from integer without a cast [-Wint-conversion]
+  150 |       if(strcmp(cadena[i],"(") == 0) parent ++;
+      |                 ~~~~~~^~~
+      |                       |
+      |                       char
+In file included from test.c:3:
+/nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/string.h:156:32: note: expected ‘const char *’ but argument is of type ‘char’
+  156 | extern int strcmp (const char *__s1, const char *__s2)
+      |                    ~~~~~~~~~~~~^~~~
+exercises.c:151:28: error: passing argument 1 of ‘strcmp’ makes pointer from integer without a cast [-Wint-conversion]
+  151 |       else if(strcmp(cadena[i],"[") == 0)   corchete ++;
+      |                      ~~~~~~^~~
+      |                            |
+      |                            char
+/nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/string.h:156:32: note: expected ‘const char *’ but argument is of type ‘char’
+  156 | extern int strcmp (const char *__s1, const char *__s2)
+      |                    ~~~~~~~~~~~~^~~~
+exercises.c:152:25: error: passing argument 1 of ‘strcmp’ makes pointer from integer without a cast [-Wint-conversion]
+  152 |       else(strcmp(cadena[i]),"{") == 0) llave;
+      |                   ~~~~~~^~~
+      |                         |
+      |                         char
+/nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/string.h:156:32: note: expected ‘const char *’ but argument is of type ‘char’
+  156 | extern int strcmp (const char *__s1, const char *__s2)
+      |                    ~~~~~~~~~~~~^~~~
+exercises.c:152:12: error: too few arguments to function ‘strcmp’
+  152 |       else(strcmp(cadena[i]),"{") == 0) llave;
+      |            ^~~~~~
+/nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/string.h:156:12: note: declared here
+  156 | extern int strcmp (const char *__s1, const char *__s2)
+      |            ^~~~~~
+exercises.c:152:29: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+  152 |       else(strcmp(cadena[i]),"{") == 0) llave;
+      |                             ^
+exercises.c:152:11: error: statement with no effect [-Werror=unused-value]
+  152 |       else(strcmp(cadena[i]),"{") == 0) llave;
+      |           ^
+exercises.c:152:39: error: expected ‘;’ before ‘)’ token
+  152 |       else(strcmp(cadena[i]),"{") == 0) llave;
+      |                                       ^
+      |                                       ;
+exercises.c:152:7: error: this ‘else’ clause does not guard... [-Werror=misleading-indentation]
+  152 |       else(strcmp(cadena[i]),"{") == 0) llave;
+      |       ^~~~
+exercises.c:152:39: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘else’
+  152 |       else(strcmp(cadena[i]),"{") == 0) llave;
+      |                                       ^
+exercises.c:152:39: error: expected statement before ‘)’ token
+exercises.c:152:41: error: statement with no effect [-Werror=unused-value]
+  152 |       else(strcmp(cadena[i]),"{") == 0) llave;
+      |                                         ^~~~~
+exercises.c:157:29: error: passing argument 1 of ‘strcmp’ makes pointer from integer without a cast [-Wint-conversion]
+  157 |             if(strcmp(cadena[k],")") != 0) return 0;
+      |                       ~~~~~~^~~
+      |                             |
+      |                             char
+/nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/string.h:156:32: note: expected ‘const char *’ but argument is of type ‘char’
+  156 | extern int strcmp (const char *__s1, const char *__s2)
+      |                    ~~~~~~~~~~~~^~~~
+exercises.c:161:29: error: passing argument 1 of ‘strcmp’ makes pointer from integer without a cast [-Wint-conversion]
+  161 |             if(strcmp(cadena[k],"]") != 0) return 0;
+      |                       ~~~~~~^~~
+      |                             |
+      |                             char
+/nix/store/m3n0h7646c7qwf6dbvdqhslmxmv2dg3z-glibc-2.40-66-dev/include/string.h:156:32: note: expected ‘const char *’ but argument is of type ‘char’
+  156 | extern int strcmp (const char *__s1, const char *__s2)
+      |                    ~~~~~~~~~~~~^~~~
+exercises.c:163:21: error: statement with no effect [-Werror=unused-value]
+  163 |          else(llave > 0)
+      |              ~~~~~~~^~~~
+exercises.c:163:25: error: expected ‘;’ before ‘{’ token
+  163 |          else(llave > 0)
+      |                         ^
+      |                         ;
+  164 |          {
+      |          ~               
+cc1: all warnings being treated as errors
+e50f9fe
