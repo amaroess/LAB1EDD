@@ -79,3 +79,17 @@ exercises.c:120:18: error: ‘AUX’ undeclared (first use in this function)
       |                  ^~~
 exercises.c:120:18: note: each undeclared identifier is reported only once for each function it appears in
 28bc7db
+Sun Mar 22 04:06:14 AM UTC 2026: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:112:15: error: ‘dato’ is used uninitialized [-Werror=uninitialized]
+  112 |    while(dato != NULL)
+      |               ^
+exercises.c:111:10: note: ‘dato’ was declared here
+  111 |    void* dato;
+      |          ^~~~
+cc1: all warnings being treated as errors
+ab5ddf5
